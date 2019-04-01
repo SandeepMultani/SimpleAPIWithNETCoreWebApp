@@ -1,0 +1,7 @@
+﻿dotnet ef dbcontext list
+dotnet ef dbcontext info -s ..\OdeToFood\OdeToFood.csproj
+
+dotnet ef migrations add initialcreate -s ..\OdeToFood\OdeToFood.csproj
+
+
+
