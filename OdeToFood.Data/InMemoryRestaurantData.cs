@@ -44,6 +44,15 @@ namespace OdeToFood.Data
             return 0;
         }
 
+        public Restaurant Delete(int id)
+        {
+            var restaurant = restaurants.FirstOrDefault(r => r.Id == id);
+            if (restaurant != null) {
+                restaurants.Remove(restaurant);
+            }
+            return restaurant;
+        }
+
         public IEnumerable<Restaurant> GetAll()
         {
             return from r in restaurants
@@ -54,6 +63,11 @@ namespace OdeToFood.Data
         public Restaurant GetById(int id)
         {
             return restaurants.SingleOrDefault(r => r.Id == id);
+        }
+
+        public int GetCountOfRestaurants()
+        {
+            return restaurants.Count;
         }
 
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
